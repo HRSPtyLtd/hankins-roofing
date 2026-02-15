@@ -104,6 +104,9 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input, textarea {
@@ -189,17 +192,19 @@ footer {
     <h2 class="gold">Organise a FREE Quote</h2>
     <p style="color:#aaa; margin-top:10px;">Submit your details below and we’ll get back to you promptly.</p>
 
-    <!-- FORM NOTE:
-         To make this form actually send emails,
-         you will need Formspree or similar service.
-         I can set that up for you next.
-    -->
-
     <form action="https://formspree.io/f/xykdwnew" method="POST">
+        
+        <!-- Email Subject -->
+        <input type="hidden" name="_subject" value="New Website Enquiry - Hankins Roofing Solutions">
+
+        <!-- Honeypot Spam Protection -->
+        <input type="text" name="_gotcha" style="display:none">
+
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="tel" name="phone" placeholder="Phone Number" required>
         <input type="email" name="email" placeholder="Email Address" required>
         <textarea name="message" placeholder="Tell us about your roofing needs..." required></textarea>
+
         <button type="submit">Submit Enquiry</button>
     </form>
 
@@ -214,4 +219,3 @@ footer {
 
 </body>
 </html>
-
