@@ -1,167 +1,216 @@
-ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
- b=pWy6XZNF/ltdti6mOiGiW++5w5MJsBVfCYg7mJf1wHu9AGvs0oaq9FfGJ7pR5vTUiUguqK5lcCDzjt5fwoHEGNosK/KJIXSUOvzj4AfMRxNAaj7JEWR8/VvzK/U4NPxp76RIEekhwSa2U7kiTiT/RGCTdtKzDyDpEf9REOI0+2J/Hz5RXZxAygsB7SLHbbaGhz3VJtbFRIHdQIc047yLDX27RarbKBImKTVSUJfP7BLbdDaZgVsC9CdVWKUuqmC+mgR/BqI8TKglj2ovkMwUMMacqBoEDUcy/facZumt+2+ooTlZJFGpe/0UuxNuevVsV4tZZPhizvFPGB0WGZrk4Q==
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=yfQlV2J28nA5qliyFTmXFAN08PDe9GY7yp+0M67aigY=;
- b=c2ozorNnOl8t4IRbXl4Vw+C8rn+CZhxDt+4VfSQMt+3FhqBlNWrNhf95/Z8X/Wdk3WsG8vEqEOxz33Y/KHKM04f74rPWyC7ynSDP4/HWMD1IU2m9APFbO+IFAJbEpAdjAAtl7ZwPf7o++rQvK1ZGjIaBoyLfuOvgM/ehAkn5Qzm1gerb6PgqVfjpmVRsiZHFehwI6rlMXF1oxcshczx3dvZaxQNEzyNC3Ftn8tQPXmOGtjIkB+hWtQGCEnY4OW9EOH9gjnD8JEp65YndB7UQH3unRJ9f+Ff+XisJ7IyaJW0APDkOybtFaiTBR7h7Bjprzpv6gUuER3wScfJKMbnJDA==
-ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
- 52.103.68.27) smtp.rcpttodomain=outlook.com.au smtp.mailfrom=outlook.com.au;
- dmarc=pass (p=none sp=none pct=100) action=none header.from=outlook.com.au;
- dkim=pass (signature was verified) header.d=outlook.com.au; arc=pass (0 oda=0
- ltdi=1)
-Received: from PH7PR10CA0004.namprd10.prod.outlook.com (2603:10b6:510:23d::22)
- by BLAPR10MB5138.namprd10.prod.outlook.com (2603:10b6:208:322::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9611.11; Sun, 15 Feb
- 2026 07:41:55 +0000
-Received: from CY4PEPF0000FCC0.namprd03.prod.outlook.com
- (2603:10b6:510:23d:cafe::7) by PH7PR10CA0004.outlook.office365.com
- (2603:10b6:510:23d::22) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9611.16 via Frontend Transport; Sun,
- 15 Feb 2026 07:41:55 +0000
-Authentication-Results: spf=pass (sender IP is 52.103.68.27)
- smtp.mailfrom=outlook.com.au; dkim=pass (signature was verified)
- header.d=OUTLOOK.COM.AU;dmarc=pass action=none header.from=outlook.com.au;
-Received-SPF: Pass (protection.outlook.com: domain of outlook.com.au
- designates 52.103.68.27 as permitted sender) receiver=protection.outlook.com;
- client-ip=52.103.68.27; helo=PNZPR01CU001.outbound.protection.outlook.com;
- pr=C
-Received: from PNZPR01CU001.outbound.protection.outlook.com (52.103.68.27) by
- CY4PEPF0000FCC0.mail.protection.outlook.com (10.167.242.102) with Microsoft
- SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9632.12
- via Frontend Transport; Sun, 15 Feb 2026 07:41:53 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:AE6CF7838434E0F75CA6203C0CD5B1C2D4FF09E573989B8B2FF493C052EE2034;UpperCasedChecksum:961572E5DCCD771B8A8F1BF5049E09F493B12B6F9CC6A580954C0555A31C4284;SizeAsReceived:9130;Count:36
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=a8csY3FakeCrs62jA60gq04rRzNzVHoS1zmmSsqHaD2NLukuwQclWNzLPpVXzPd3Ya+7mnsccBVL6ucuOKp7QI4QEhZaKZIjr9wphKuMJk0w9r1tNnT/EII5xQ4i2SdX2dAitTYQdo4Jif4Cdrf8pzD0zim6ar8np5lllaqJ3AO1ivjyhaLltdnWcfXPHAbUxwo0Qsks7EnpUe7PnmmiLmx/2+HintKyLbYSWyyYY1mHa1E1bIcgll+lEI676VlQ649fFRsc2lgFgPMbDBthK+0myCKzjcddeH0Fa5Yq9nVLelDFIQX7gZJ5ojLPV1hzKQL2wImal3kVtDCR6yz2UQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=yfQlV2J28nA5qliyFTmXFAN08PDe9GY7yp+0M67aigY=;
- b=EL5XNgt2PSwFdWfASb4x/TwOk18Hec6IAy5DUY7xrJYQkoOFVK+VuhmLAdX4IUkgMDvmPzQLGaq2D0ZinoSMyH9XkxtMRHYOHr537Jla6PyQJ01ASCYDACTM38iwjwRN07qPidmNW02ggnUxb6f3QlmnS/+5M3pwoKSEtNw8lnXZRxdCH4giGdn9tP3qy21aiyQ91WL9jO84BWq+91GycLjcflxy8eNMxSWH+HmEZzHQRl+3REoleDwkJ2IoIR8Suhz4ani98VXgutEI6Qiu/NFGbSV86qCxwu/LKIVXhySaBnfts8gns9FkSezG905k4d6I+fp+59vAldjshxPedA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=OUTLOOK.COM.AU;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yfQlV2J28nA5qliyFTmXFAN08PDe9GY7yp+0M67aigY=;
- b=FB1bsuzTcH+4t9Ai+FczvTZLU8ZDv7NiSn7+UM1esGpFgIYBEe9En/zX6yYQJpT13wLchs55Apq/InDWRFSmZbjJn+F5cjLY37I/jraSwoZ5sv0m1Svhnhe6SOdnoNcuVRr5D8Q326Ysaqafj/AORB/aEebBFVGTC9o2l1GX0lon7QevFmTSk+51T0BgM1MxbPAcGDtd5m5/hOgg1X/cwlWP/qV8PWk4lyALSvUxVTmmjNBYxhZUIDJCUlYWb7PNmIoaPHJJak7zqGDd9yNwG8kBJeuA52T75aJDW8T0N+kP/wPKpvX9K7JOS+AUnt7B/RXFG+LqIH//Z1B/dSriBw==
-Received: from PN4P287MB4250.INDP287.PROD.OUTLOOK.COM (2603:1096:c01:2a6::10)
- by PN2P287MB1870.INDP287.PROD.OUTLOOK.COM (2603:1096:c01:1b4::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9632.13; Sun, 15 Feb
- 2026 07:41:50 +0000
-Received: from PN4P287MB4250.INDP287.PROD.OUTLOOK.COM
- ([fe80::b181:a317:10a3:5f19]) by PN4P287MB4250.INDP287.PROD.OUTLOOK.COM
- ([fe80::b181:a317:10a3:5f19%5]) with mapi id 15.20.9632.010; Sun, 15 Feb 2026
- 07:41:49 +0000
-From: Joel Hankin <hankinsroofingsolutions@outlook.com.au>
-To: "hankinsroofingsolution@outlook.com.au"
-     <hankinsroofingsolution@outlook.com.au>
-Subject:
-Thread-Index: AQHcnk5//CZ8zEhtBECUZVj5+EFbvQ==
-Date: Sun, 15 Feb 2026 07:41:49 +0000
-Message-ID: <PN4P287MB4250AC286D3D6EEA90C71608806FA@PN4P287MB4250.INDP287.PROD.OUTLOOK.COM>
-Accept-Language: en-AU, en-US
-Content-Language: en-AU
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-x-ms-reactions: allow
-x-ms-traffictypediagnostic:
- PN4P287MB4250:EE_|PN2P287MB1870:EE_|CY4PEPF0000FCC0:EE_|BLAPR10MB5138:EE_
-X-MS-Office365-Filtering-Correlation-Id: f4a19a02-cc3c-4f51-19a2-08de6c65b0aa
-X-Microsoft-Antispam-Untrusted: BCL:0;ARA:14566002|12050799012|8062599012|19110799012|15080799012|8060799015|41001999006|461199028|31061999003|8022599003|5062599005|14030799003|9400799043|10035399007|4302099013|3412199025|440099028|12091999003|102099032|1602099012;
-X-Microsoft-Antispam-Message-Info-Original: =?us-ascii?Q?PNIOQhJFbBs1YeD43droMaFRA0Da8xZLsJkHp02Ze8lKGP0DuGphW5dyBDgo?=
- =?us-ascii?Q?NtkQb3UcN3gOg4vgSM6AN2VSkB07WMOjxvDlpJc1BC/V3vv0R4CT+JIr8AY6?=
- =?us-ascii?Q?e1C6kFaHXBKyNemE/RFBk+vyzaWkMqlBtbJTidqvemLUONKouwt4PEqOA7xO?=
- =?us-ascii?Q?r91ScJqQqtTnOfIzAzkVNJPJe3ayiAbB7eYYGgUKjjwee1k8CojpZW+XZoEw?=
- =?us-ascii?Q?G7PMhBellnNrbwNFPr5hK/HWxHeMaGRZdxp6qRXOPZT9tereklWeTcrf4EIF?=
- =?us-ascii?Q?zNpG8Xpfwq0r6BFCViG8yXw1aSU5gwJkGYsiQ+z9dFtgm+Ms0WykYjUXBYx/?=
- =?us-ascii?Q?Oqh3Optti75Zg/cdsLxknWhqqAC/KibK3CYlMhLmWQQ7ICE4dOLib+Fk7cCW?=
- =?us-ascii?Q?35vlfpiz9AuB+eGfs4YGQuXsg2efCx34TVaWZPim5gf7QCLvL0uGYd/oaVwE?=
- =?us-ascii?Q?ayGNyX9qHoCX4lbdiMHc15BP8f7T2/o/xQ6C9XP49m0glsJgkXUMyVV9bUNM?=
- =?us-ascii?Q?IZhKgo1Jfs5ZMfP/TK8W0o2Y3ziQp/eQp/aY4NZyxNdzSpRtZLkcQoXIhOM1?=
- =?us-ascii?Q?gni8JPgWWiF5gBHk07yMAJbTJU67856aV5EggDy6aswS/oIRUcHBt+5kibqO?=
- =?us-ascii?Q?qV96KF5hMG4f13eUVVpudQAtj816K4cB+ApR0BHvwasUwHLvabC4k5ld0Uvj?=
- =?us-ascii?Q?sVHCXB9TIGnjfVry5y7HAcLssoi4IPujl2EjngRuxWms4lWYrN6cKrj6FHWd?=
- =?us-ascii?Q?0mscvNQshpZwZ3/snBOqH34aVlVZ7YQsSC+OBbmz3WfyhclLnloK+99hZuqz?=
- =?us-ascii?Q?LHNIV4q3Snhqk77YtSzgFHEIFLjYgUPNdlL+yBpsR/5wPen7h30z3wanbgZo?=
- =?us-ascii?Q?YQVtIEz+8KSQQBp7n6ncoXmjuTr44rZ5sAXFJOGieAHuBX1oYWA+nPchy63u?=
- =?us-ascii?Q?t9sg1T1XkCi7NElb1vD9FKXHeNvdYrPixjckjLwdp9MQMJPGzKNUg7H25CiT?=
- =?us-ascii?Q?0E9an67gvtV1hJNmP/kIMOBW1gCOHAf5ueQppSltHu3nPutCb2b8BAF4iUTN?=
- =?us-ascii?Q?PBLr/TmsjcBLvpbpHaY9dBjfghkJyRoMgrusmfo6Q+jh1YoS5KIZo+g+Mnd3?=
- =?us-ascii?Q?SzCExheV42gJWfCg1Z8gMv/soCM8+0jPxoZR/jqWnYIsIZJ7DqQiG//+C3wZ?=
- =?us-ascii?Q?TmVkF0rBqnuC/5tmgai4aHvV6vl2fcgS36pmCPT2dCXv5ae4C4rzs57GcbpW?=
- =?us-ascii?Q?N2I3OTKUAXtoYiiprlAJVGaWhpmKLMGAw1ZkO1Lvt36ZYz3cdvzc1UvoVp+u?=
- =?us-ascii?Q?uYqs8IGJzg9frS/uiC0zfRUOmVRlkqt0Lzdtil9Rq6jUTlrSsVc+8NHdg6ms?=
- =?us-ascii?Q?0XntlBh8OGR4WCqLYmATSA7aq7c2qDAB+fKKIN8rc82rDsYNxXZ9e+dF6Wgd?=
- =?us-ascii?Q?jjzBrRqXtzU3/yPqdo//Rjbo1OX2YgRx+2VZYdhIqTRLYRMoS5HiEA=3D=3D?=
-X-MS-Exchange-AntiSpam-MessageData-Original-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-Original-0:
- =?us-ascii?Q?tytZX+Sl7wfTgzKUX69WizAkz9m8+EPtHpUfE8Ct7ElDrzZqvAXpc+rLTbnW?=
- =?us-ascii?Q?jfQUoJlhpiTgBbLw6EqZwQ2RRt9uJxlkAtB0OUuu4ymdd6YHBRCaOkrmLzEj?=
- =?us-ascii?Q?J8qGVzV1Q4P/Qzr6PIK6XRIwz+US5kNHie+ZMZfZpWq4l0u8zxmSzYqnofaq?=
- =?us-ascii?Q?faCmCb68eqDD4RubpGGHCCER+I01rE5B/ufXd0hkZv1gY4b51QKXAR+H97eb?=
- =?us-ascii?Q?YpQZiERpLFphVjViPRvCyJKpvlaFqGyF45HrJTplsh1Oa8FsgfbXw1Ey3tc5?=
- =?us-ascii?Q?FAjpIpbfJgmZLwEYwZTjmncsHDfzsHvoLdobCOtAS1ZnFSftFMO8iU2Oh0t6?=
- =?us-ascii?Q?4rcYx7PyLBeB7AjWalDzGSdvmpTZKTvBfDla17EbOf6agREZINip/1FH9di/?=
- =?us-ascii?Q?CqsD9kjKP149SnfIz2exn4WzuvQdmA5ke8bTW8xvrDcnnMcCi7q3M95Z0SRX?=
- =?us-ascii?Q?JjKGXCvyzvF9puKlMQzvys5o1VEpz7sW5AgJUtRjdTyo5Ai5Ij3tQH88p14m?=
- =?us-ascii?Q?2+T0eeT+LsEvnQPtws0qXoXhkWK1iauYYGyxqcS/LBOpqodvYFSkiruK2xcb?=
- =?us-ascii?Q?app2iUKKpVC8KNFwR1Mrtm+eQUxuR7xLyhLNpv8E/b1Uza60VzSCiaqvmzYa?=
- =?us-ascii?Q?Zoji39/4J2XlePLwQbtImkdw9oLGTyvXADhAkfDrb4AENe4r2nWBpXZ20hga?=
- =?us-ascii?Q?7iOH/g+nqOkoldXZs5HOCOjls9b62V5YnXsyxJFqafvj2goxJRrWi/nkuCXr?=
- =?us-ascii?Q?XYctMmIDjSZk91Do0zqOHUlzDpO1r2OpTkPSvpQ34Bsox0/TAnHX3DGZYy9G?=
- =?us-ascii?Q?x6fEdrukEmNKEd8JlGjfy2gYx/um5/KH2SiCG/sCZSJw59yWze9LBKRNJJEr?=
- =?us-ascii?Q?By+yi97wkzu3MYSZrn+quk/IaoJ3I8F7t3wIcjtudBLLj16g+LbB3of4bDBN?=
- =?us-ascii?Q?lRuV5axpjylb5qjb/pLQNAucb4NIqR+WGMbIY/W7KJP9nhifjrbKA6jSNWnw?=
- =?us-ascii?Q?LkFbbCOZHcbVDjt3yv7OkpQfZDrEygefb8WELYkhn7HaM0H+6nf3mS5jNscx?=
- =?us-ascii?Q?hPu5zBUlVWfii2ZjRbZItONbLOxEuz8BhJSYSo8Y8e2znI19+M38yhm/wO/h?=
- =?us-ascii?Q?YCG4ZhN7JkE8UjO1kzGlpEz+98HXfgyMuJnQ6RK8BnjVTeoQfiCj9mvek5x/?=
- =?us-ascii?Q?3L+48AhXV8qg7NR3ryUe2ohpXeebt7NWpvOVxMv3LxVGiFzlcICrA7exDqBx?=
- =?us-ascii?Q?Nur59nODxN0koIM727ta7YMlD36lHOwkeMtUK61er6sjbtiMVjBo+MA/nRFD?=
- =?us-ascii?Q?IT6MlZN8cD3bqGY3tE6+mlTbuLS0+hGFTfB337Q605QAm/Sg0zDpd5LK9CAi?=
- =?us-ascii?Q?24Q6zjx3sKq5MAzh6ROWLbo8qbjCVxIJQM5zZxcpwH54TJKeZt9kn8nrf4FX?=
- =?us-ascii?Q?HAJ/E9syELcAhBvdERJCBNySNLJkoeKm?=
-Content-Type: multipart/alternative;
-    boundary="_000_PN4P287MB4250AC286D3D6EEA90C71608806FAPN4P287MB4250INDP_"
-MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PN2P287MB1870
-X-IncomingHeaderCount: 36
-Return-Path: hankinsroofingsolutions@outlook.com.au
-X-EOPAttributedMessage: 0
-X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: CY4PEPF0000FCC0.namprd03.prod.outlook.com
-X-MS-Exchange-Transport-CrossTenantHeadersPromoted: CY4PEPF0000FCC0.namprd03.prod.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs:
- 1da41bd4-55e7-483f-f3d6-08de6c65add1
-X-MS-Exchange-EOPDirect: true
-X-Sender-IP: 52.103.68.27
-X-SID-PRA: HANKINSROOFINGSOLUTIONS@OUTLOOK.COM.AU
-X-SID-Result: PASS
-X-Microsoft-Antispam:
- BCL:0;ARA:1444111002|19300799024|22040799006|7140799003|2500799015|461199028|32000799015|9400799043|13020799006|1370799030|1360799030|1380799030|1602099012|4302099013|3412199025|440099028|30041999003;
-X-Microsoft-Antispam-Message-Info:
- =?us-ascii?Q?eMbUr+OyXDlcn+iUEMi+wMQPRnW4h2CVUzpDELBpeaJtYtesycZ6973flVG9?=
- =?us-ascii?Q?VugGL3uqbYdzF0QJ9le9WApYdQlTItfQIvgM8MraKLpKFSTaA3aCiRRe56SD?=
- =?us-ascii?Q?JdeAbjyz8mK3XIWE55npHUqiYgNOI7qQ0AC0XPlYVA9MUT0l+BIUXv2Gyhoe?=
- =?us-ascii?Q?KFTPmESwtVxSGqhs1NWxlE4BTHgMheS5fIVNxBuYkGSlxmQsstVepo49nXcn?=
- =?us-ascii?Q?XJzNyKK9VN7DihRf4ZvNhUkBxqhPptmoXF5YD7W4Qi1NiT+vOcyy+71VwjYE?=
- =?us-ascii?Q?vE7HdkXG4dwtQUyR/xXdOtejCh58jx2sWyswloNKPq4dIl8Elg5RNEG5K+D7?=
- =?us-ascii?Q?UiqUbSTqM/DipLBh0JirsElQtcyQnarhy2SXn72/YBrH8VD8aW8BCuw7FLFh?=
- =?us-ascii?Q?VtxHzYOHmAO1njZdcc52asawpof3LXc4FqRPpmsbmTkz1VfP0ymug7Tllp3S?=
- =?us-ascii?Q?W+WWeIhGERGk8cU6KB89OnYnhxNjufG2p4/0OL2CCiqtGbvNsfrY5LPtanV3?=
- =?us-ascii?Q?kRqUxSGCapMGCFd0106fHkGa0oOqBENTuFCPuQZPTfx0xG0Uw1vWpxpNB2MV?=
- =?us-ascii?Q?ym2tuhhS2Jrsn99+DajiZMRB3q9vV+iHWAMbcIdZB25R3ZDh7AmTlqYTQGno?=
- =?us-ascii?Q?rDaJ0A1FTKyJtmIrj6WOADLDbytQEVtBLZ2YELGROYeGBfc7Z36NOQuVkDV0?=
- =?us-ascii?Q?7VDlYGi4Y283erm6VK+45G0SBauUxRkn7WZq1ZOF+4KsKcjmjqrnh0uIsrhJ?=
- =?us-ascii?Q?jyk4XtUbNY4apsBmCMgfIY5CsUERBDSc1iERC3mdO5HehKM+6f2nOFw+aVAZ?=
- =?us-ascii?Q?uFJ98X19CPUKAAAEyPQyIKmhSx+NOrdiaoa0KszOrnxJE+8VmCJvapW7MJ9C?=
- =?us-ascii?Q?Pu6cGXve3ljlxnp5a0d1CRqKfCFz6mC7oaZgjdUkgTCQTbt7bSrF7DDhVOyn?=
- =?us-ascii?Q?IzThCLBzuufMexSwdPbSQLHVcrhzSAZhtkcyC0WxVipff6AygUkLDkJsomdH?=
- =?us-ascii?Q?AFMtFfSUhuAxaII1FMDBChj2mNbZR46544si9PItRTbjjvQkY9Wn3wkgqN+m?=
- =?us-ascii?Q?WAFVSAFZ4uKUZg1DpiBsDH8ForCAGAUz0aD8/ThyLaQa5ep5sByK01sHLFae?=
- =?us-ascii?Q?enYtrR+VKqEifzRA7lLyKKxAEyll5juhdKW1LtSV+ecZuiJ+69nib5hY1Qcm?=
- =?us-ascii?Q?9Sf4EUSt8RZd4k2NzDUfX/xWYw7jdGd7GHK4u6cJm42K74sKA0uTsYZxv0I?=
- =?us-ascii?Q?=3D?=
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hankins Roofing Solutions</title>
+
+<style>
+:root {
+    --black: #0f0f0f;
+    --gold: #c6a75e;
+    --light: #f5f5f5;
+    --darkgrey: #1c1c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: var(--black);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+header {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 14px 32px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.services, .why {
+    text-align: center;
+}
+
+.services ul, .why ul {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.services li, .why li {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+    font-size: 18px;
+    color: #ddd;
+}
+
+.contact {
+    background: var(--darkgrey);
+    text-align: center;
+    border-radius: 10px;
+}
+
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    padding: 15px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 14px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #222;
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hankins <span class="gold">Roofing Solutions</span></h1>
+    <p>Protect your home and boost your curb appeal.</p>
+    <a href="#contact" class="btn">Request a FREE Quote</a>
+</header>
+
+<section class="services">
+    <h2 class="gold">Our Services</h2>
+    <ul>
+        <li>Roof Installation & Replacement</li>
+        <li>Tile Repair & Leak Fixes</li>
+        <li>Tile Cleaning & Restoration</li>
+    </ul>
+</section>
+
+<section class="why">
+    <h2 class="gold">Why Choose Us?</h2>
+    <ul>
+        <li>Fully Licensed & Insured</li>
+        <li>10+ Years Experience</li>
+        <li>Emergency Call-Outs Available</li>
+    </ul>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="gold">Organise a FREE Quote</h2>
+    <p style="color:#aaa; margin-top:10px;">Submit your details below and we’ll get back to you promptly.</p>
+
+    <!-- FORM NOTE:
+         To make this form actually send emails,
+         you will need Formspree or similar service.
+         I can set that up for you next.
+    -->
+
+    <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" placeholder="Tell us about your roofing needs..." required></textarea>
+        <button type="submit">Submit Enquiry</button>
+    </form>
+
+    <p style="margin-top:30px; font-size:14px; color:#777;">
+        Prefer to call? 0490 510 728
+    </p>
+</section>
+
+<footer>
+    © 2026 Hankins Roofing Solutions. All Rights Reserved.
+</footer>
+
+</body>
+</html>
