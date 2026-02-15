@@ -1,79 +1,221 @@
-/* General Styles (adjust as needed) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hankins Roofing Solutions</title>
+
+<style>
+:root {
+    --black: #0f0f0f;
+    --gold: #c6a75e;
+    --light: #f5f5f5;
+    --darkgrey: #1c1c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;  /* Dark background for luxury */
-    color: #fff;  /* White text for contrast */
-}
-
-header {
-    background-color: #000;  /* Solid black for luxury feel */
-    color: #d4af37;  /* Gold text */
-    text-align: center;
-    padding: 30px 0;
-    border-bottom: 4px solid #d4af37;  /* Gold bottom border for elegance */
-}
-
-h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #d4af37;  /* Gold headers */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    font-size: 1.2rem;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: var(--black);
+    color: var(--light);
+    line-height: 1.6;
 }
 
 section {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-#services ul, #why-choose-us ul {
+h1, h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.gold {
+    color: var(--gold);
+}
+
+header {
+    height: 90vh;
     display: flex;
-    justify-content: space-around;
-    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #222;
 }
 
-/* Location Section Styling */
-#locations {
-    background-color: #333;  /* Dark gray for subtle contrast */
-    color: #fff;
-    padding: 40px 20px;
+header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 14px 32px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.services, .why {
     text-align: center;
+}
+
+.services ul, .why ul {
+    list-style: none;
     margin-top: 40px;
 }
 
-#locations h2 {
-    font-size: 2rem;
-    color: #d4af37;  /* Gold color for titles */
-    margin-bottom: 10px;
+.services li, .why li {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+    font-size: 18px;
+    color: #ddd;
 }
 
-#locations p {
-    font-size: 1.1rem;
-    color: #ccc;  /* Light gray text */
+.contact {
+    background: var(--darkgrey);
+    text-align: center;
+    border-radius: 10px;
 }
 
-/* Footer Styles */
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, textarea {
+    padding: 15px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    padding: 14px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
 footer {
-    background-color: #000;  /* Solid black footer */
-    color: #fff;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    padding: 40px 20px;
+    border-top: 1px solid #222;
+    font-size: 14px;
+    color: #777;
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: #d4af37;  /* Gold text for footer */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
 }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hankins <span class="gold">Roofing Solutions</span></h1>
+    <p>Protect your home and boost your curb appeal.</p>
+    <a href="#contact" class="btn">Request a FREE Quote</a>
+</header>
+
+<section class="services">
+    <h2 class="gold">Our Services</h2>
+    <ul>
+        <li>Roof Installation & Replacement</li>
+        <li>Tile Repair & Leak Fixes</li>
+        <li>Tile Cleaning & Restoration</li>
+    </ul>
+</section>
+
+<section class="why">
+    <h2 class="gold">Why Choose Us?</h2>
+    <ul>
+        <li>Fully Licensed & Insured</li>
+        <li>10+ Years Experience</li>
+        <li>Emergency Call-Outs Available</li>
+    </ul>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="gold">Organise a FREE Quote</h2>
+    <p style="color:#aaa; margin-top:10px;">Submit your details below and we’ll get back to you promptly.</p>
+
+    <form action="https://formspree.io/f/xykdwnew" method="POST">
+        
+        <!-- Email Subject -->
+        <input type="hidden" name="_subject" value="New Website Enquiry - Hankins Roofing Solutions">
+
+        <!-- Honeypot Spam Protection -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" placeholder="Tell us about your roofing needs..." required></textarea>
+
+        <button type="submit">Submit Enquiry</button>
+    </form>
+
+    <p style="margin-top:30px; font-size:14px; color:#777;">
+        Prefer to call? 0490 510 728
+    </p>
+</section>
+
+<footer>
+    © 2026 Hankins Roofing Solutions. All Rights Reserved.
+</footer>
+
+</body>
+</html>
