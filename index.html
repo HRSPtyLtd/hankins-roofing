@@ -77,6 +77,21 @@ header p {
     color: var(--black);
 }
 
+/* New Location Bar */
+.location-bar {
+    background-color: var(--darkgrey);
+    color: var(--gold);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* Services and Why Sections */
 .services, .why {
     text-align: center;
 }
@@ -163,6 +178,11 @@ footer {
 </head>
 
 <body>
+
+<!-- Location Bar (Fixed at top of page) -->
+<div class="location-bar">
+    We service the Blue Mountains & Sydney
+</div>
 
 <header>
     <h1>Hankins <span class="gold">Roofing Solutions</span></h1>
